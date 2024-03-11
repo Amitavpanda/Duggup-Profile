@@ -12,12 +12,13 @@
 	import TimeLineConnector from './ui/TimeLineComponent/TimeLineConnector.svelte';
 	import * as Card from '$lib/components/ui/card';
 	import TimeLineContent from './ui/TimeLineComponent/TimeLineContent.svelte';
-	let follow = profile.followStatus;
+	import { follow } from '$lib/store/followStore';
+	import ModalComponent from './ModalComponent.svelte';
 </script>
 
-<div class="mx-10 mt-10">
+<div class="flex flex-col items-start  mt-10">
 	<!-- profile header -->
-	<div class="flexCenter mx-40 gap-11">
+	<div class="flexCenter mx-20 gap-11 p-10">
 		<div class=" flexCenter flex-col">
 			<img src={profile.pic.src} alt={profile.pic.alt} />
 			<div class="flexCenter flex-col">
@@ -28,13 +29,9 @@
 
 		<div class="flex flex-col justify-between">
 			<p class="text-wrap text-black-300">{profile.description}</p>
-			<Button
-				class="shadow-custom mt-10 h-[2.25rem] w-[6.375rem] gap-1 border border-black-100 bg-white text-black-100"
-				style={`box-shadow: 0 6px 1px 0 rgba(0, 0, 0, 1);`}
-			>
-				<p class="text-black-100">{follow}</p>
-			</Button>
+			<ModalComponent />
 		</div>
+
 
 		<!-- last part -->
 		<div class="flex flex-col">
@@ -58,7 +55,7 @@
 	</div>
 
 	<!-- profile info -->
-	<div class="mt-10">
+	<div class=" mt-5">
 		<TimeLine>
 			{#each profile.info as data}
 				<TimeLineItem style={`min-height : 288px`}>
@@ -91,13 +88,22 @@
 				</TimeLineItem>
 
 				<TimeLineItem style={`min-height : 288px`}>
-
 					<TimeLineOppositeContent>
-						<img src={data.designationInfo.description.logo.src} alt={data.designationInfo.description.logo.alt} class="w-[3rem] h-[3rem]"/>
-						<p class="text-black-300 mt-1 bold-16">{data.designationInfo.description.organisatioName}</p>
-						<p class="text-[0.75rem] text-silver-100">{data.designationInfo.description.location}</p>
+						<img
+							src={data.designationInfo.description.logo.src}
+							alt={data.designationInfo.description.logo.alt}
+							class="h-[3rem] w-[3rem]"
+						/>
+						<p class="bold-16 mt-1 text-black-300">
+							{data.designationInfo.description.organisatioName}
+						</p>
+						<p class="text-[0.75rem] text-silver-100">
+							{data.designationInfo.description.location}
+						</p>
 						<p class="text-[0.75rem] text-silver-100">Joined</p>
-						<p class="text-[0.75rem] text-silver-100">{data.designationInfo.description.joinedDate}</p>
+						<p class="text-[0.75rem] text-silver-100">
+							{data.designationInfo.description.joinedDate}
+						</p>
 					</TimeLineOppositeContent>
 					<TimeLineSeparator>
 						<TimeLineConnector style={`min-height : 288px;`} />
@@ -107,7 +113,9 @@
 						<div class="px-[0.5rem] py-[1.5rem]">
 							<p class="bold-20">{data.designationInfo.designation.title}</p>
 							<div class="flex flex-row items-start gap-1">
-								<p class="text-[0.75rem] text-silver-100">{data.designationInfo.designation.mode}</p>
+								<p class="text-[0.75rem] text-silver-100">
+									{data.designationInfo.designation.mode}
+								</p>
 							</div>
 						</div>
 					</TimeLineContent>

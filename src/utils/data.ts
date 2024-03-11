@@ -44,7 +44,7 @@ export const profile = {
         "lastName": "Kiran",
     },
     "description": "Co-Founder and CEO at Duggup - Social network for people in tech. Ex-Amazon Head of Engineering. I write hot-takes on building a business, shipping delightful products and accelerating product and career growth.",
-    "followStatus": "Followed",
+    "followStatus": "Follow",
     "company": {
         "logo": {
             "src": Logo,
