@@ -28,9 +28,9 @@
 		</div>
 
 
-            <Button class="bg-white text-black-100 border gap-1 w-[6.375rem] h-[2.25rem] border-black-100 shadow-custom" style={`box-shadow: 0 6px 1px 0 rgba(0, 0, 0, 1);`}>
+            <Button class="bg-white text-black-100 border gap-1 w-[6.375rem] h-[2.25rem] border-black-100 shadow-custom  text-black-100" style={`box-shadow: 0 6px 1px 0 rgba(0, 0, 0, 1);`}>
                 <img src={PostIcon} alt="Button Icon" />
-                <p class="text-black-100">Post</p>
+                Post
             </Button>
 
 
