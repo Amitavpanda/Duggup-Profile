@@ -3,6 +3,6 @@
 </script>
 
 
-<span class="w-[2px] bg-black-100 grow border-2 border-dotted" {style}/>
+<span class="bg-silver-100 grow border-l-2 border-dotted" {style}/>
 
 
