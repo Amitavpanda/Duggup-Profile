@@ -1,9 +1,9 @@
 <script>
 	import { menus, profile } from "../../utils/data";
-	import PostIcon from '$lib/assets/PostIcon.png';
 	import Logo from '$lib/assets/LogoIcon.png';
 	import Button from "./ui/button/button.svelte";
 	import DownIcon from "$lib/assets/DownIcon.png";
+	import Post from "$lib/components/Post.svelte";
 </script>
 
 
@@ -27,10 +27,7 @@
 		</div>
 
 
-            <Button class="bg-white text-black-100 border gap-1 w-[6.375rem] h-[2.25rem] border-black-100 shadow-custom  text-black-100" style={`box-shadow: 0 6px 1px 0 rgba(0, 0, 0, 1);`}>
-                <img src={PostIcon} alt="Button Icon" />
-                Post
-            </Button>
+		<Post />
 
 
 		<div class="flexCenter gap-2">
