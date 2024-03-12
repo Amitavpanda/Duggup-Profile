@@ -1,5 +1,4 @@
 <script>
-
 	import { menus, profile } from "../../utils/data";
 	import PostIcon from '$lib/assets/PostIcon.png';
 	import Logo from '$lib/assets/LogoIcon.png';
@@ -9,8 +8,8 @@
 
 
 
-<div class="flexBetween py-[0.625rem]">
-
+<div class="flexBetween py-[0.625rem]  border-b-2 border-silver-100 border-dotted">
+	
 	<div class="flexCenter gap-1">
 		<img src={Logo} alt="Logo" />
 		<p class="text-black-1000 bold-20">duggup</p>
